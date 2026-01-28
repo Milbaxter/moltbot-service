@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <title>Build Your AI Assistant - Everything You Need to Create Your Perfect AI Helper</title>
+    <meta name="description" content="Everything you need to build your own AI assistant. No coding required. Start simple, customize as you grow. Your assistant, your data, your control.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+        }
+        
+        /* Hero Section - WordPress style */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .trust-note {
+            margin-top: 30px;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        /* Features Grid */
+        .features-section {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #1a202c;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #1a202c;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Use Cases */
+        .use-cases {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+        
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+        
+        .use-case {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .use-case h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
+        
+        .use-case p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        /* Pricing */
+        .pricing-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .pricing-card {
+            max-width: 500px;
+            margin: 60px auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            text-align: center;
+        }
+        
+        .pricing-card h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        
+        .price-period {
+            font-size: 0.4em;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin: 40px 0;
+        }
+        
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 1.1em;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .cta-button-white {
+            background: white;
+            color: #667eea;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-white:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Trust Section */
+        .trust-section {
+            padding: 80px 20px;
+            background: #f9fafb;
+            text-align: center;
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 60px auto;
+        }
+        
+        .trust-item {
+            padding: 20px;
+        }
+        
+        .trust-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .trust-label {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .footer-cta h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+        
+        .footer-cta p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Everything You Need to Build Your AI Assistant</h1>
+            <p>No coding required. Start simple, customize as you grow. Your assistant, your data, your control.</p>
+            <a href="#get-started" class="cta-button">Get Started</a>
+            <p class="trust-note">✨ Built on Clawdbot — Trusted by early adopters worldwide</p>
+        </div>
+    </div>
+
+    <!-- Main Features -->
+    <section class="features-section">
+        <div class="features-container">
+            <h2 class="section-title">Build the Perfect Assistant for YOU</h2>
+            <p class="section-subtitle">Whether you need help with work, life admin, or creative projects — your assistant adapts to your needs.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Easy to Start</h3>
+                    <p>No technical knowledge needed. We set up your AI assistant in 15 minutes. You just text it like a friend and start getting help immediately.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Fully Customizable</h3>
+                    <p>Start with basics, add features as you need them. Custom workflows, integrations, automations — your assistant grows with you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>You Own Everything</h3>
+                    <p>Your assistant runs on YOUR private server. Your conversations, data, automations — all yours. No vendor lock-in. Export anytime.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Natural Conversation</h3>
+                    <p>Just text in plain English. No commands, no special syntax. Your assistant understands context and remembers everything you discuss.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Actually Does Things</h3>
+                    <p>Unlike chatbots that just talk, your assistant can run code, process files, schedule tasks, connect to your apps — real work gets done.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Works 24/7</h3>
+                    <p>Your assistant runs in the cloud, always available. Send tasks at 3 AM, while traveling, anytime. It's always working for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">Build Your Assistant in 3 Steps</h2>
+        <p class="section-subtitle">From zero to your own AI assistant in less than 30 minutes</p>
+        
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choose Your Setup</h3>
+                <p>Tell us what you need help with. We configure your AI assistant based on your goals — work productivity, life admin, creative projects, or all of the above.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>We Build It For You</h3>
+                <p>We provision your private cloud server, install everything, connect integrations you want (calendar, email, Notion, etc.). You approve, we handle the technical stuff.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Start Using It</h3>
+                <p>Open Telegram or WhatsApp and start texting your assistant. That's it. Get help immediately. Customize and add features as you discover what you need.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <h2 class="section-title">Build Your Assistant For Any Use Case</h2>
+        <p class="section-subtitle">Your assistant adapts to however you want to use it</p>
+        
+        <div class="use-case-grid">
+            <div class="use-case">
+                <h4>📊 Work Productivity</h4>
+                <p>Research, email drafting, meeting prep, project management, deadline reminders — your work assistant handles the busywork.</p>
+            </div>
+            
+            <div class="use-case">
+                <h4>🏠 Life Admin</h4>
+                <p>Scheduling, bill reminders, travel planning, gift ideas, appointment booking — never forget important life stuff again.</p>
+            </div>
+            
+            <div class="use-case">
+                <h4>🧠 Second Brain</h4>
+                <p>Capture ideas, organize notes, connect knowledge, surface insights — your external memory that never forgets.</p>
+            </div>
+            
+            <div class="use-case">
+                <h4>✍️ Creative Projects</h4>
+                <p>Brainstorming, content drafts, editing help, research — your creative partner that's always available.</p>
+            </div>
+            
+            <div class="use-case">
+                <h4>📚 Learning & Growth</h4>
+                <p>Study guides, reading summaries, skill-building plans, accountability — your personal tutor and coach.</p>
+            </div>
+            
+            <div class="use-case">
+                <h4>🎯 Custom Workflows</h4>
+                <p>Build exactly what YOU need. Your assistant can run code, automate tasks, integrate with any tool — limitless possibilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <h2 class="section-title">Built on Proven Technology</h2>
+        <p class="section-subtitle">Powered by the same AI that leading companies use</p>
+        
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-number">🤖</div>
+                <div class="trust-label">Claude Sonnet 4.5<br>State-of-the-art AI</div>
+            </div>
+            
+            <div class="trust-item">
+                <div class="trust-number">🔓</div>
+                <div class="trust-label">Open Source<br>Clawdbot Framework</div>
+            </div>
+            
+            <div class="trust-item">
+                <div class="trust-number">☁️</div>
+                <div class="trust-label">Your Own Server<br>Complete Privacy</div>
+            </div>
+            
+            <div class="trust-item">
+                <div class="trust-number">24/7</div>
+                <div class="trust-label">Always Running<br>Never Sleeps</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section" id="get-started">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">Everything included. No hidden fees. Cancel anytime.</p>
+        
+        <div class="pricing-card">
+            <h3>Build Your Assistant</h3>
+            <div class="price">$89.99<span class="price-period">/month</span></div>
+            
+            <ul class="pricing-features">
+                <li>✅ Full setup & configuration</li>
+                <li>✅ Your own private cloud server</li>
+                <li>✅ Unlimited conversations & tasks</li>
+                <li>✅ Custom integrations (calendar, email, apps)</li>
+                <li>✅ 24/7 availability</li>
+                <li>✅ Telegram or WhatsApp interface</li>
+                <li>✅ Priority support from real humans</li>
+                <li>✅ Own your data completely</li>
+                <li>✅ 14-day money-back guarantee</li>
+            </ul>
+            
+            <a href="#waitlist" class="cta-button-white">Start Building</a>
+            
+            <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.9;">
+                💡 Advanced users: Bring your own AI API keys for direct cost control
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="footer-cta" id="waitlist">
+        <h2>Ready to Build Your AI Assistant?</h2>
+        <p>Join early adopters who are building their perfect AI helpers</p>
+        
+        <form style="max-width: 500px; margin: 0 auto;" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 18px; border-radius: 50px; border: none; font-size: 1.1em; margin-bottom: 20px;">
+            <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Get Started</button>
+        </form>
+        
+        <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.9;">
+            🔒 No credit card required. 14-day money-back guarantee.
+        </p>
+    </section>
+</body>
+</html>
