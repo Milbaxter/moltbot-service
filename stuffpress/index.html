@@ -669,25 +669,39 @@
 
     <script src="https://js.stripe.com/v3/"></script>
     <script>
-        // Initialize Stripe
-        const stripe = Stripe('pk_live_51NDiE9Cr8oInGVYktuEm3JoURUKIQXKvxONXrPFdjG6TtNTe7rW7oc4P2A0UZsMMmjwguZ1qb6SPQInNbmzld2BH006H0yWFTS');
-        
-        // Attach checkout handler to all checkout buttons
-        document.querySelectorAll('.checkout-button').forEach(function(button) {
-            button.addEventListener('click', function() {
-                // Redirect to Stripe Checkout
-                stripe.redirectToCheckout({
-                    lineItems: [{
-                        price: 'price_1Suf6KCr8oInGVYkD0D9nWwI',
-                        quantity: 1
-                    }],
-                    mode: 'subscription',
-                    successUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?success=true',
-                    cancelUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?canceled=true',
-                }).then(function (result) {
-                    if (result.error) {
-                        alert(result.error.message);
-                    }
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Stripe
+            const stripe = Stripe('pk_live_51NDiE9Cr8oInGVYktuEm3JoURUKIQXKvxONXrPFdjG6TtNTe7rW7oc4P2A0UZsMMmjwguZ1qb6SPQInNbmzld2BH006H0yWFTS');
+            
+            // Find all checkout buttons
+            const buttons = document.querySelectorAll('.checkout-button');
+            console.log('Found ' + buttons.length + ' checkout buttons');
+            
+            // Attach checkout handler to all checkout buttons
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Checkout button clicked, redirecting to Stripe...');
+                    
+                    // Redirect to Stripe Checkout
+                    stripe.redirectToCheckout({
+                        lineItems: [{
+                            price: 'price_1Suf6KCr8oInGVYkD0D9nWwI',
+                            quantity: 1
+                        }],
+                        mode: 'subscription',
+                        successUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?success=true',
+                        cancelUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?canceled=true',
+                    }).then(function (result) {
+                        if (result.error) {
+                            console.error('Stripe error:', result.error);
+                            alert('Error: ' + result.error.message);
+                        }
+                    }).catch(function(error) {
+                        console.error('Checkout error:', error);
+                        alert('Failed to open checkout. Please try again or contact support.');
+                    });
                 });
             });
         });
