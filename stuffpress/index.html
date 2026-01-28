@@ -70,11 +70,18 @@
             transition: all 0.2s;
             border: none;
             cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        button.cta-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
         
         .hero-visual {
@@ -358,7 +365,7 @@
             <div class="hero-content">
                 <h1>StuffPress, done right</h1>
                 <p>Your stuff, handled. We host and set up your own Moltbot (the cutting edge of AI assistants) so you can focus on what matters. No coding required. Just text it on WhatsApp or Telegram.</p>
-                <a href="#get-started" class="cta-button">Get started</a>
+                <button class="cta-button checkout-button">Get started</button>
             </div>
             <div class="hero-visual">
                 <div class="phone-mockup">
@@ -421,14 +428,14 @@
         <div class="split-section">
             <div class="split-content">
                 <h2>Your stuff's forever home</h2>
-                <p>Imagine having your own computer in the cloud, always handling your stuff. Text at 3 AM, while traveling, anytime. It's always working — running code, processing files, handling the stuff you need handled.</p>
+                <p>Imagine your assistant having their own computer in the cloud, always handling your stuff. Text at 3 AM, while traveling, anytime. It's always working — running code, processing files, handling the stuff you need handled.</p>
                 <p>Full ownership of your stuff and data. Keep full control and export everything, whenever you want.</p>
             </div>
             <div class="split-visual">
                 <div style="text-align: center; padding: 40px; background: white; border-radius: 8px;">
                     <div style="font-size: 4rem; margin-bottom: 20px;">🖥️</div>
-                    <div style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px;">Their Own Computer</div>
-                    <div style="color: #50575e;">In the Cloud • Always On • Always Working</div>
+                    <div style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px;">Assistant with their own computer</div>
+                    <div style="color: #50575e;">in the cloud, always available, always working</div>
                 </div>
             </div>
         </div>
@@ -517,7 +524,7 @@
                     <li>✅ 14-day money-back guarantee</li>
                 </ul>
                 
-                <a href="#start" class="cta-button" style="width: 100%; text-align: center;">Get started</a>
+                <button class="cta-button checkout-button" style="width: 100%; text-align: center;">Get started</button>
                 
                 <div style="margin-top: 24px; padding: 16px; background: #f6f7f7; border-radius: 4px; font-size: 0.95rem; color: #50575e;">
                     💡 Bring your own AI API keys for direct cost control
@@ -630,7 +637,7 @@
             <h2>Ready to handle your stuff?</h2>
             <p>Join early adopters getting their stuff handled by StuffPress</p>
             
-            <button id="checkout-button" class="cta-button" style="padding: 18px 50px; font-size: 1.25rem; cursor: pointer;">
+            <button class="cta-button checkout-button" style="padding: 18px 50px; font-size: 1.25rem; cursor: pointer;">
                 Start Your Subscription
             </button>
             
@@ -660,20 +667,23 @@
         // Initialize Stripe
         const stripe = Stripe('pk_live_51NDiE9Cr8oInGVYktuEm3JoURUKIQXKvxONXrPFdjG6TtNTe7rW7oc4P2A0UZsMMmjwguZ1qb6SPQInNbmzld2BH006H0yWFTS');
         
-        document.getElementById('checkout-button').addEventListener('click', function() {
-            // Redirect to Stripe Checkout
-            stripe.redirectToCheckout({
-                lineItems: [{
-                    price: 'price_1Suf6KCr8oInGVYkD0D9nWwI',
-                    quantity: 1
-                }],
-                mode: 'subscription',
-                successUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?success=true',
-                cancelUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?canceled=true',
-            }).then(function (result) {
-                if (result.error) {
-                    alert(result.error.message);
-                }
+        // Attach checkout handler to all checkout buttons
+        document.querySelectorAll('.checkout-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Redirect to Stripe Checkout
+                stripe.redirectToCheckout({
+                    lineItems: [{
+                        price: 'price_1Suf6KCr8oInGVYkD0D9nWwI',
+                        quantity: 1
+                    }],
+                    mode: 'subscription',
+                    successUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?success=true',
+                    cancelUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?canceled=true',
+                }).then(function (result) {
+                    if (result.error) {
+                        alert(result.error.message);
+                    }
+                });
             });
         });
     </script>
