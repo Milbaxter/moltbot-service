@@ -532,15 +532,37 @@
             <h2>Ready to handle your stuff?</h2>
             <p>Join early adopters getting their stuff handled by StuffPress</p>
             
-            <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <input type="email" name="email" class="email-input" placeholder="Enter your email" required>
-                <button type="submit" class="cta-button">Get started</button>
-            </form>
+            <button id="checkout-button" class="cta-button" style="padding: 18px 50px; font-size: 1.25rem; cursor: pointer;">
+                Start Your Subscription
+            </button>
             
             <p style="margin-top: 24px; font-size: 0.95rem; opacity: 0.8;">
-                🔒 No credit card required
+                🔒 Secure checkout powered by Stripe
             </p>
         </div>
     </section>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_live_51SuewECr8oInGVYkz7y5xVKh9Q8F3xM2nVGlXkJpEY2iJiVXWG0N9nZPTYq5LGx7QJnM8VC8KfU8ZLWq5CJVQK9F00qQKfO8mL'); // Replace with your publishable key
+        
+        document.getElementById('checkout-button').addEventListener('click', function() {
+            // Redirect to Stripe Checkout
+            stripe.redirectToCheckout({
+                lineItems: [{
+                    price: 'price_1Suf6KCr8oInGVYkD0D9nWwI',
+                    quantity: 1
+                }],
+                mode: 'subscription',
+                successUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?success=true',
+                cancelUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?canceled=true',
+            }).then(function (result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
