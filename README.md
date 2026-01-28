@@ -1,22 +1,42 @@
 # Moltbot Service - Landing Page
 
-A simple landing page for offering managed Moltbot (AI assistant) instances as a service.
+A conversion-optimized landing page for offering managed Moltbot (AI assistant) instances as a service.
 
 ## What This Is
 
 This landing page lets customers sign up for a fully-managed Moltbot instance running in the cloud. You handle the setup manually during beta, and customers get access to Claude AI via WhatsApp, Telegram, or iMessage.
+
+## Features
+
+- Modern, bold design with gradient backgrounds
+- Conversion-optimized copy using psychological triggers
+- Social proof, testimonials, and comparison sections
+- Monthly/Annual pricing toggle
+- Mobile-responsive
+- Accessibility features (ARIA labels, prefers-reduced-motion support)
+- 7-day money-back guarantee messaging
+- Urgency and scarcity elements
 
 ## Setup Instructions
 
 ### 1. Set Up Stripe
 
 1. Go to [Stripe Dashboard](https://dashboard.stripe.com/)
-2. Create a new Product:
-   - Name: "Moltbot Personal Assistant"
-   - Price: $49/month (recurring)
-3. Create a Payment Link for this product
-4. Copy the payment link URL
-5. Open `script.js` and replace `YOUR_STRIPE_PAYMENT_LINK_HERE` with your actual Stripe payment link
+2. Create two Products:
+
+   **Monthly Plan:**
+   - Name: "Moltbot Personal Assistant - Monthly"
+   - Price: $49/month (recurring monthly)
+
+   **Annual Plan:**
+   - Name: "Moltbot Personal Assistant - Annual"
+   - Price: $490/year (recurring yearly)
+
+3. Create Payment Links for both products
+4. Copy both payment link URLs
+5. Open `script.js` and replace:
+   - `YOUR_STRIPE_MONTHLY_LINK_HERE` with your monthly payment link
+   - `YOUR_STRIPE_ANNUAL_LINK_HERE` with your annual payment link
 
 ### 2. Update Contact Information
 

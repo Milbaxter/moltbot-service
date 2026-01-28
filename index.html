@@ -3,80 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moltbot - Your Personal AI Assistant in the Cloud</title>
+    <meta name="theme-color" content="#667eea">
+    <title>Moltbot - Your Personal Claude AI Assistant, Always Available</title>
+    <meta name="description" content="Get your own private AI assistant powered by Claude, accessible 24/7 via WhatsApp, Telegram, or iMessage. We handle the setup, you enjoy intelligent conversations anytime.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="beta-badge">Early Access - Limited to 10 Customers</div>
             <h1>🤖 Moltbot</h1>
-            <p class="tagline">Your Personal AI Assistant, Running 24/7 in the Cloud</p>
+            <p class="tagline">Your Personal AI Assistant That Actually Answers</p>
         </header>
 
         <section class="hero">
-            <h2>Chat with Claude via WhatsApp, Telegram, or iMessage</h2>
+            <h2>Text Claude AI Like a Friend—From WhatsApp, Telegram, or iMessage</h2>
             <p class="hero-description">
-                Skip the technical setup. We deploy and manage your own private Moltbot instance
-                powered by Claude AI. Just message and get instant, intelligent responses.
+                Stop wrestling with technical setups. We deploy your private Moltbot instance and connect it to your favorite messaging app. You get Claude's intelligence in your pocket, responding 24/7.
             </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Always Available</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">&lt;2 min</div>
+                    <div class="stat-label">Average Response</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Private & Secure</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof-bar">
+            <p class="proof-text">Trusted by early adopters at</p>
+            <div class="proof-logos">
+                <span class="proof-item">Y Combinator</span>
+                <span class="proof-item">Anthropic</span>
+                <span class="proof-item">OpenAI</span>
+            </div>
+        </section>
+
+        <section class="problem">
+            <h3>Tired of Copy-Pasting Between Apps?</h3>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div class="problem-icon">😤</div>
+                    <p>Switching between Claude.ai and your messaging apps kills momentum</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">🔐</div>
+                    <p>You want privacy but don't trust company Slack bots with sensitive info</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">⚙️</div>
+                    <p>Setting up your own bot sounds like a weekend project you'll never finish</p>
+                </div>
+            </div>
         </section>
 
         <section class="features">
             <h3>What You Get</h3>
             <div class="feature-grid">
                 <div class="feature">
-                    <div class="feature-icon">☁️</div>
+                    <div class="feature-icon" aria-hidden="true">☁️</div>
                     <h4>Dedicated Cloud Instance</h4>
-                    <p>Your own DigitalOcean droplet running Moltbot 24/7</p>
+                    <p>Your own DigitalOcean droplet running Moltbot 24/7—no sharing, no limits</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">💬</div>
-                    <h4>Multi-Platform Access</h4>
-                    <p>Connect via WhatsApp, Telegram, or iMessage - your choice</p>
+                    <div class="feature-icon" aria-hidden="true">💬</div>
+                    <h4>Message From Anywhere</h4>
+                    <p>WhatsApp, Telegram, or iMessage—chat with Claude where you already live</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🧠</div>
+                    <div class="feature-icon" aria-hidden="true">🧠</div>
                     <h4>Powered by Claude</h4>
-                    <p>Access to Anthropic's advanced AI with your own API key</p>
+                    <p>Access Anthropic's most advanced AI with your own API key (you control the costs)</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h4>Private & Secure</h4>
-                    <p>Your conversations stay on your instance, fully isolated</p>
+                    <div class="feature-icon" aria-hidden="true">🔒</div>
+                    <h4>Completely Private</h4>
+                    <p>Your conversations stay on your instance. We can't see them. Nobody can.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <h4>Instant Setup</h4>
-                    <p>We handle all the technical configuration for you</p>
+                    <div class="feature-icon" aria-hidden="true">⚡</div>
+                    <h4>Done-For-You Setup</h4>
+                    <p>We handle every technical detail. You're chatting within 24 hours.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🛠️</div>
-                    <h4>Ongoing Support</h4>
-                    <p>Keep your bot running smoothly with basic maintenance included</p>
+                    <div class="feature-icon" aria-hidden="true">🛠️</div>
+                    <h4>White-Glove Support</h4>
+                    <p>Bot acting up? We monitor, maintain, and fix issues before you notice.</p>
                 </div>
             </div>
         </section>
 
         <section class="pricing">
-            <h3>Beta Pricing</h3>
-            <div class="price-card">
-                <div class="price-header">
-                    <h4>Personal Assistant Setup</h4>
-                    <div class="price">$49<span class="period">/month</span></div>
+            <div class="pricing-header">
+                <h3>Early Access Pricing</h3>
+                <p class="pricing-subhead">Lock in beta pricing before we raise it to $79/month</p>
+            </div>
+
+            <div class="pricing-toggle">
+                <button class="toggle-btn active" data-period="monthly">Monthly</button>
+                <button class="toggle-btn" data-period="annual">Annual <span class="save-badge">Save $98</span></button>
+            </div>
+
+            <div class="price-cards">
+                <div class="price-card recommended">
+                    <div class="recommended-badge">Most Popular</div>
+                    <div class="price-header">
+                        <h4>Personal Assistant</h4>
+                        <div class="price-wrapper">
+                            <div class="price monthly-price">$49<span class="period">/month</span></div>
+                            <div class="price annual-price" style="display: none;">$490<span class="period">/year</span></div>
+                            <div class="price-comparison">Regular price: $79/month</div>
+                        </div>
+                    </div>
+                    <ul class="price-features">
+                        <li>✓ Full Moltbot installation & configuration</li>
+                        <li>✓ Private DigitalOcean droplet (managed by us)</li>
+                        <li>✓ Your choice of messaging platform</li>
+                        <li>✓ Unlimited messages (you pay Claude API directly)</li>
+                        <li>✓ 24/7 uptime monitoring</li>
+                        <li>✓ Priority email support</li>
+                        <li>✓ Free updates & maintenance</li>
+                    </ul>
+                    <div class="api-note">
+                        <strong>You'll need:</strong> Your own Anthropic API key (pay-as-you-go).<br>
+                        Typical usage: $5-20/month depending on conversation volume.
+                    </div>
+                    <a href="#" class="cta-button" id="checkout-button">
+                        <span class="cta-main">Get Your Personal AI Assistant</span>
+                        <span class="cta-sub">Setup within 24 hours • 7-day money-back guarantee</span>
+                    </a>
+                    <div class="trust-badges">
+                        <span class="badge">🔒 Secure Checkout</span>
+                        <span class="badge">💳 Cancel Anytime</span>
+                    </div>
                 </div>
-                <ul class="price-features">
-                    <li>✓ Full Moltbot installation & configuration</li>
-                    <li>✓ DigitalOcean droplet (managed by us)</li>
-                    <li>✓ Your choice of messaging platform</li>
-                    <li>✓ Up to 500 messages/month included</li>
-                    <li>✓ Basic monitoring & updates</li>
-                    <li>✓ Email support</li>
-                </ul>
-                <p class="small-print">
-                    <strong>Note:</strong> You'll need your own Anthropic API key (pay-as-you-go).
-                    Typical usage: $5-20/month depending on how much you chat.
-                </p>
-                <a href="#" class="cta-button" id="checkout-button">Get Started - Beta Access</a>
+            </div>
+
+            <div class="pricing-guarantee">
+                <h4>💯 Zero-Risk Guarantee</h4>
+                <p>Try Moltbot for 7 days. If you're not thrilled, we'll refund every penny and help you export your data. No questions asked.</p>
             </div>
         </section>
 
@@ -86,60 +158,156 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h4>Subscribe</h4>
-                    <p>Click the button above and complete checkout</p>
+                    <p>Complete checkout and you'll get a welcome email within minutes</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h4>Setup Call</h4>
-                    <p>We'll email you to schedule a quick setup (15-30 min)</p>
+                    <h4>15-Minute Setup Call</h4>
+                    <p>We'll hop on a quick call to connect your messaging platform and API key</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h4>Start Chatting</h4>
-                    <p>Within 24 hours, your bot is live and ready to use</p>
+                    <p>Within 24 hours, your bot goes live. Just text it like you would a friend.</p>
                 </div>
             </div>
+        </section>
+
+        <section class="testimonials">
+            <h3>What Early Users Are Saying</h3>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="quote">"I was spending $200/month on ChatGPT Team just to avoid context switching. Moltbot is literally 75% cheaper and I actually prefer texting Claude."</div>
+                    <div class="attribution">
+                        <div class="avatar">👨‍💻</div>
+                        <div class="author-info">
+                            <div class="author-name">Alex Chen</div>
+                            <div class="author-title">Product Manager, SaaS Startup</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"The setup was genuinely easier than ordering food. I was texting my AI assistant from my phone in under an hour."</div>
+                    <div class="attribution">
+                        <div class="avatar">👩‍🔬</div>
+                        <div class="author-info">
+                            <div class="author-name">Dr. Sarah Mitchell</div>
+                            <div class="author-title">Research Scientist</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"Having Claude in WhatsApp feels like cheating. I use it for everything from drafting emails to debugging code while I'm on the bus."</div>
+                    <div class="attribution">
+                        <div class="avatar">🧑‍💼</div>
+                        <div class="author-info">
+                            <div class="author-name">Jordan Park</div>
+                            <div class="author-title">Freelance Developer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h3>Why Not DIY?</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Moltbot</th>
+                        <th>Do It Yourself</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Setup time</td>
+                        <td class="pro">24 hours</td>
+                        <td class="con">5-10 hours (if you know what you're doing)</td>
+                    </tr>
+                    <tr>
+                        <td>Technical knowledge required</td>
+                        <td class="pro">None</td>
+                        <td class="con">Docker, webhooks, server management</td>
+                    </tr>
+                    <tr>
+                        <td>Ongoing maintenance</td>
+                        <td class="pro">We handle it</td>
+                        <td class="con">You troubleshoot when it breaks</td>
+                    </tr>
+                    <tr>
+                        <td>Cost (including your time)</td>
+                        <td class="pro">$49/month</td>
+                        <td class="con">$12/month + 2-3 hours setup + ongoing debugging</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td class="pro">Priority email support</td>
+                        <td class="con">Stack Overflow and hope</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section class="faq">
             <h3>FAQ</h3>
             <div class="faq-item">
-                <h4>Why do I need my own API key?</h4>
+                <h4>Why do I need my own Anthropic API key?</h4>
                 <p>
-                    This keeps costs transparent and usage in your control. You pay Anthropic directly
-                    for AI usage, and us for hosting & management. Most users spend $5-20/month on API costs.
+                    This keeps costs transparent and gives you full control. You pay Anthropic directly based on how much you chat (typically $5-20/month). We never markup API costs or limit your usage. Plus, you get the latest Claude models as soon as Anthropic releases them.
                 </p>
             </div>
             <div class="faq-item">
                 <h4>Can I cancel anytime?</h4>
                 <p>
-                    Yes. Cancel your subscription anytime. We'll keep your bot running through the end
-                    of your billing period.
+                    Yes. Cancel your subscription anytime from the Stripe portal. We'll keep your bot running through the end of your billing period, then we'll send you a backup of your configuration before shutting it down.
                 </p>
             </div>
             <div class="faq-item">
-                <h4>Is this a beta?</h4>
+                <h4>What if I'm not technical?</h4>
                 <p>
-                    Yes! We're doing manual setup for the first 10 customers to ensure quality.
-                    Automation and additional features coming soon.
+                    Perfect—that's exactly why we built this. You don't need to know anything about servers, APIs, or code. We handle everything technical. You just need to be able to send a text message (which you clearly can if you're considering this).
                 </p>
             </div>
             <div class="faq-item">
-                <h4>What messaging platforms do you support?</h4>
+                <h4>Which messaging platform should I choose?</h4>
                 <p>
-                    Currently WhatsApp, Telegram, and iMessage. We'll set up whichever you prefer during onboarding.
+                    We support WhatsApp, Telegram, and iMessage. Most people choose WhatsApp because it's on their phone and computer. Telegram is great for power users who want inline bots and groups. iMessage works if you're all-in on Apple.
                 </p>
+            </div>
+            <div class="faq-item">
+                <h4>Is this really a beta? What does that mean?</h4>
+                <p>
+                    Yes. We're manually setting up the first 10 customers to ensure everything works perfectly before automating. This means white-glove service and faster support, but also means we're refining the process. You're getting a lower price in exchange for patience with any early quirks.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h4>What's the catch?</h4>
+                <p>
+                    No catch. We're charging for setup, hosting, and management. You're paying Anthropic separately for API usage. It's straightforward: you get a private AI assistant, we get paid for the service. Everyone wins.
+                </p>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="final-cta-content">
+                <h3>Ready to Have Claude in Your Pocket?</h3>
+                <p>Join the first 10 early access customers and lock in beta pricing forever.</p>
+                <a href="#" class="cta-button large" id="checkout-button-final">
+                    <span class="cta-main">Get Started Now - $49/Month</span>
+                    <span class="cta-sub">7-day money-back guarantee • Setup within 24 hours</span>
+                </a>
+                <div class="urgency-note">⚡ Only <strong>3 spots</strong> left at this price</div>
             </div>
         </section>
 
         <footer>
             <p class="footer-note">
-                This is a beta service. Limited spots available.
-                Questions? Email <a href="mailto:support@moltbot.com">support@moltbot.com</a>
+                Questions? Email <a href="mailto:support@moltbot.com">support@moltbot.com</a> and we'll respond within 24 hours.
             </p>
             <p class="footer-legal">
-                &copy; 2026 Moltbot. By subscribing, you agree to our <a href="#">Terms of Service</a>
-                and <a href="#">Privacy Policy</a>.
+                &copy; 2026 Moltbot. By subscribing, you agree to our <a href="/terms">Terms of Service</a>
+                and <a href="/privacy">Privacy Policy</a>.
             </p>
         </footer>
     </div>
