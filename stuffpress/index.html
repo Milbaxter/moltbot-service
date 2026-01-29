@@ -365,7 +365,7 @@
             <div class="hero-content">
                 <h1>Moltbot, set up for you</h1>
                 <p>Moltbot is the next-generation evolution of ChatGPT assistants — a personal AI that lives 24/7 in your own private cloud computer. It's going viral because interacting with it via Telegram is incredibly natural and powerful. We set it up for you, so you can skip the technical complexity and start using it immediately.</p>
-                <button class="cta-button checkout-button">Get started</button>
+                <a href="https://buy.stripe.com/14AaEWgUm8Kuh1p06U28802" class="cta-button">Get started</a>
             </div>
             <div class="hero-visual">
                 <div class="phone-mockup">
@@ -525,7 +525,7 @@
                     <li>✅ 14-day money-back guarantee</li>
                 </ul>
                 
-                <button class="cta-button checkout-button" style="width: 100%; text-align: center;">Get started</button>
+                <a href="https://buy.stripe.com/14AaEWgUm8Kuh1p06U28802" class="cta-button" style="width: 100%; text-align: center; display: block;">Get started</a>
                 
                 <div style="margin-top: 24px; padding: 16px; background: #f6f7f7; border-radius: 4px; font-size: 0.95rem; color: #50575e;">
                     <strong>Fair Use Policy:</strong> AI usage is included for typical personal assistant use (hundreds of messages per day). Excessive usage may be throttled. Need more? Advanced users can add their own API keys for unlimited usage beyond the included tier.
@@ -656,9 +656,9 @@
             <h2>Ready to experience Moltbot?</h2>
             <p>Join early adopters using the next evolution of AI assistants. We'll set it up for you.</p>
             
-            <button class="cta-button checkout-button" style="padding: 18px 50px; font-size: 1.25rem; cursor: pointer;">
+            <a href="https://buy.stripe.com/14AaEWgUm8Kuh1p06U28802" class="cta-button" style="padding: 18px 50px; font-size: 1.25rem; cursor: pointer; display: inline-block;">
                 Start Your Subscription
-            </button>
+            </a>
             
             <p style="margin-top: 24px; font-size: 0.95rem; opacity: 0.8;">
                 🔒 Secure checkout powered by Stripe
@@ -686,44 +686,5 @@
         </div>
     </footer>
 
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        // Wait for page to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Stripe
-            const stripe = Stripe('pk_live_51NDiE9Cr8oInGVYktuEm3JoURUKIQXKvxONXrPFdjG6TtNTe7rW7oc4P2A0UZsMMmjwguZ1qb6SPQInNbmzld2BH006H0yWFTS');
-            
-            // Find all checkout buttons
-            const buttons = document.querySelectorAll('.checkout-button');
-            console.log('Found ' + buttons.length + ' checkout buttons');
-            
-            // Attach checkout handler to all checkout buttons
-            buttons.forEach(function(button) {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('Checkout button clicked, redirecting to Stripe...');
-                    
-                    // Redirect to Stripe Checkout
-                    stripe.redirectToCheckout({
-                        lineItems: [{
-                            price: 'price_1Suf6KCr8oInGVYkD0D9nWwI',
-                            quantity: 1
-                        }],
-                        mode: 'subscription',
-                        successUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?success=true',
-                        cancelUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + '?canceled=true',
-                    }).then(function (result) {
-                        if (result.error) {
-                            console.error('Stripe error:', result.error);
-                            alert('Error: ' + result.error.message);
-                        }
-                    }).catch(function(error) {
-                        console.error('Checkout error:', error);
-                        alert('Failed to open checkout. Please try again or contact support.');
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
