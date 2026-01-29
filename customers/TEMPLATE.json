@@ -1,0 +1,54 @@
+{
+  "id": "cust_XXXXXX",
+  "email": "customer@example.com",
+  "name": "Customer Name",
+  "signupDate": "2026-01-29T05:54:00Z",
+  "status": "pending_setup",
+  "subscription": {
+    "stripeSubscriptionId": "sub_XXXXXX",
+    "stripePriceId": "price_1Suf6KCr8oInGVYkD0D9nWwI",
+    "plan": "stuffpress-monthly",
+    "amount": 8999,
+    "currency": "usd",
+    "status": "active",
+    "currentPeriodEnd": "2026-02-29T05:54:00Z"
+  },
+  "setup": {
+    "status": "pending",
+    "droplet": {
+      "provider": "digitalocean",
+      "id": null,
+      "ip": null,
+      "created": null
+    },
+    "moltbot": {
+      "installed": false,
+      "installedAt": null,
+      "version": null
+    },
+    "messaging": {
+      "platform": "telegram",
+      "connected": false,
+      "username": null,
+      "botToken": null
+    },
+    "handoff": {
+      "completed": false,
+      "completedAt": null,
+      "onboardingMessageSent": false
+    }
+  },
+  "notes": [],
+  "timeline": [
+    {
+      "timestamp": "2026-01-29T05:54:00Z",
+      "event": "subscription_created",
+      "details": "Customer signed up via Stripe"
+    }
+  ],
+  "metadata": {
+    "source": "stripe",
+    "referrer": null,
+    "landingPage": "stuffpress"
+  }
+}

@@ -1,0 +1,7 @@
+# Ignore actual customer data
+active/*.json
+archive/*.json
+
+# Keep template and README
+!TEMPLATE.json
+!README.md
